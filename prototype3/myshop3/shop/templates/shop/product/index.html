@@ -1,0 +1,48 @@
+{% extends "shop/base.html" %}
+
+{% block photos-content %}
+
+{% load staticfiles %}
+<!-- <h1>"Все для дома"</h1>
+
+  <p>Добро пожаловать в наш интернет-магазин <em>"Все для дома"</em></p>
+
+<h2>Статистика нашего магазина</h2>
+
+  <p>На данный момент в магазине:</p>
+  <ul>
+    <li><strong>Товаров в наличии:</strong> {{ num_goods }}</li>
+    <li><strong>Категорий в нашем магазине:</strong> {{ num_categories }}</li>
+    <li><strong>Производителей с нами сотрудничает:</strong> {{ num_manufacturer }}</li>
+    <li><strong>Количество разновидности товаров в магазине сейчас:</strong> {{ num_goods_available }}</li>
+  </ul> -->
+  
+  	<!-- {% if user.is_authenticated %}
+		<div class="user">Пользователь: {{ user.get_username }}</div>
+    {% endif %} -->
+
+
+
+<div class="categories-photo">
+    <div class="ceramics">
+      <a><img id="ceramics" src="{% static 'images/керамика1.jpg' %}"></a>
+      <div id="ceramics-border-right"></div>
+      <div id="ceramics-border-bottom"></div>
+    </div>
+    <div class="notebooks">
+      <a><img id="notebooks" src="{% static 'images/тетради1.jpg' %}"></a>
+      <div id="notebooks-border-right"></div>
+      <div id="notebooks-border-bottom"></div>
+    </div>
+    <div class="candles">
+      <a><img id="candles" src="{% static 'images/ароматы1.jpg' %}"></a>
+      <div id="candles-border-right"></div>
+      <div id="candles-border-bottom"></div>
+    </div>
+    <div class="planers">
+      <a><img id="planers" src="{% static 'images/планеры1.jpg' %}"></a>
+      <div id="planers-border-right"></div>
+      <div id="planers-border-bottom"></div>
+    </div>
+</div>
+{% endblock %}

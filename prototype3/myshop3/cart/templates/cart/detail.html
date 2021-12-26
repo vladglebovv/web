@@ -1,0 +1,71 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+
+{% block card %}
+    <div id="current-position-of-order">
+        <div id="current-position-of-order-line"></div>
+
+        <div id="current-position-of-order-card"></div>
+        <p id="current-position-of-order-card-title">Корзина</p>
+        <p id="current-position-of-order-card-1">1</p>
+        <div id="current-position-of-order-ordering"></div>
+        <p id="current-position-of-order-ordering-title">Оформление заказа</p>
+        <p id="current-position-of-order-ordering-2">2</p>
+        <div id="current-position-of-order-payment"></div>
+        <p id="current-position-of-order-payment-title">Оплата</p>
+        <p id="current-position-of-order-payment-3">3</p>
+        <div id="current-position-of-order-finish"></div>
+        <p id="current-position-of-order-finish-title">Завершение</p>
+        <p id="current-position-of-order-finish-4">4</p>
+    </div>
+    {% for item in cart %}
+            {% with product=item.product %}
+                <div id="list-of-items">
+                    <div id="line1"></div>
+                    <div id="item1">
+                        <a href="{{ product.get_absolute_url }}">
+                            <img src="{% if product.main_image %}{{ product.main_image.url }}{% endif %}" height="230px" width="170px">
+                        </a>
+                    </div>
+                    <p id="item1-name">{{ product.name }}</p>
+                    <p id="item1-amount">Количество: {{ item.quantity }}</p>
+                    <p id="item1-price">{{ item.price }} rub</p>
+                    <div id="X">
+                        <a href="{% url "cart:cart_remove" product.id%}">
+                        <div id="X1"></div>
+                        <div id="X2"></div>
+                        </a>
+                    </div>  
+                </div>
+                
+            {% endwith %}
+        {% endfor %}
+    <div class="textblock-next">
+        <!-- <div class="box1">
+            <input type="text" name="index" placeholder="Есть наш промокод?">   
+        </div> -->
+        <div class="box2" >
+            <form action="{% url 'shop:product_list' %}">
+            <button class="button-additional">продолжить покупки</button>  
+            </form>
+        </div>
+        <div class="box3">
+            <p>Сумма заказа:</p>    
+        </div>
+        <div class="box4">
+            <p>{{ cart.get_total_price }} rub</p>    
+        </div>
+        <div class="box5">
+            <form action="{% url 'orders:order_create' %}">
+            <button>перейти к оформлению</button>   
+            </form>
+        </div>
+		
+		
+    </div>
+	
+    
+	
+	
+{% endblock %}

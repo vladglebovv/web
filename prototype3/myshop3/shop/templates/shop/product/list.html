@@ -1,0 +1,23 @@
+{% extends "shop/base.html" %}
+
+{% block catalog %}
+<div class="list-and-catalog1">
+	<div class="list-of-categories">
+		<nav id="list">
+		</nav>
+	</div>
+	<div class="products-block">
+		{% for product in products %}
+		<div class="product-block">
+			<a class="product-list" href="{{ product.get_absolute_url }}">
+				<div class="poduct-img"><img src="{% if product.main_image %}{{ product.main_image.url }}{% endif %}"
+						height="400px" width="100%"></div>
+				<p>{{ product.name }}</p>
+				<p class="price">{{ product.price }} rub</p>
+			</a>
+			</br>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}
