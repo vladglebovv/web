@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+import django_heroku
+import dj_database_url
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -26,8 +28,10 @@ SECRET_KEY = '9ubiuy)y7vq+ir4*7a#ov)!db*p#9ts2l6dwvz!9so5m#rmznj'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0', 'localhost','188.68.221.224', '188.68.221.224.xip.io']
+#ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0', 'localhost','188.68.221.224', '188.68.221.224.xip.io']
+ALLOWED_HOSTS = ['*']
 
+#'.herokuapp.com'
 
 # Application definition
 
@@ -45,7 +49,7 @@ INSTALLED_APPS = (
     'orders',
 
     'login',
-
+    
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -93,7 +97,7 @@ WSGI_APPLICATION = 'myshop3.wsgi.application'
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }'''
-DATABASES = {
+'''DATABASES = {
     'default': {
         'ENGINE': "django.db.backends.postgresql",
         'NAME': "maison_dev",
@@ -102,8 +106,20 @@ DATABASES = {
         'HOST': "db",
         'PORT': "5432",
     }
+}'''
+DATABASES = {
+    'default': {
+        'ENGINE': "django.db.backends.postgresql",
+        'NAME': "de9l00vf0f9rki",
+        'USER': "eqnogrnwgiyqjt",
+        'PASSWORD': "16bacff6670bff89dfdea9ea1bae6a47350e7e3f4dadd193c71c27b4388a0499",
+        'HOST': "ec2-52-213-119-221.eu-west-1.compute.amazonaws.com",
+        'PORT': "5432",
+    }
 }
 
+'''DATABASES = {}
+DATABASES['default'] = dj_database_url.config(default='DATABASE_URL')'''
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -143,7 +159,7 @@ ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-SITE_ID = 1
+SITE_ID = 3
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
@@ -157,3 +173,4 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+django_heroku.settings(locals())

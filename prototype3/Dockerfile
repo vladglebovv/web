@@ -4,3 +4,4 @@ WORKDIR /prototype3
 COPY requirements.txt /prototype3/
 RUN pip3 install -r requirements.txt
 COPY . /prototype3/
+CMD python3 myshop3/manage.py runserver 0.0.0.0:$PORT

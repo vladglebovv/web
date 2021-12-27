@@ -9,16 +9,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;600&display=swap" rel="stylesheet">
   <meta charset="utf-8">
 
-  <!--  {% block title %}<title>Flaneur</title>{% endblock %} -->
+  
   <title>Maison</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
-
-  <!-- Добавление дополнительного статического CSS файла-->
-
+  
 
 </head>
 
@@ -62,62 +58,21 @@
 
     <nav class="menu">
       <div class="nav-link-wrapped category">
-        <a href="{% url 'shop:product_list_decor' %}" id="chancellery">Декор</a>
-        <div class="categories">
-          <ul class="categories__list">
-            <li class="categories__list__item">Вазы</li>
-            <li class="categories__list__item">Рамки</li>
-            <li class="categories__list__item">Свечи</li>
-          </ul>
-        </div>
+        <a href="{% url 'shop:product_list_bath' %}">Ванны</a>
+        
       </div>
       <div class="nav-link-wrapped category">
-        <a href="{% url 'shop:product_list_tableware' %}">Посуда</a>
-        <div class="categories">
-          <ul class="categories__list">
-            <li class="categories__list__item">Кружки</li>
-            <li class="categories__list__item">Тарелки</li>
-            <li class="categories__list__item">Прочее</li>
-          </ul>
-        </div>
+        <a href="{% url 'shop:product_list_sink' %}">Раковины</a>
+        
       </div>
       <div class="nav-link-wrapped category">
-        <a href="{% url 'shop:product_list_chancellery' %}">Концелярия</a>
-        <div class="categories">
-          <ul class="categories__list">
-            <li class="categories__list__item">Тетради</li>
-            <li class="categories__list__item">Блокноты</li>
-            <li class="categories__list__item">Ручки</li>
-          </ul>
-        </div>
+        <a href="{% url 'shop:product_list_tap' %}">Смесители</a>
+        
       </div>
     </nav>
   </div>
   <br> <br>
-  <!-- <div class="bg-modal">
-    <div class="modal-content">
-      <div class="close">+</div>
-      <div class="enter">
-        <h1>Войти</h1>
-      </div>
-      <div class="input-field2">
-        <form action="">
-        <input type="text" name="lastname" placeholder="e-mail">
-        <input type="text" name="lastname" placeholder="Пароль" >
-        </form>
-        </div>
-        <div class="button-field">
-        <form action="payment-process.html">
-          <button class="button">войти</button>
-        </form>
-      </div>
-        <form action="payment-process.html">
-          <button class="button">зарегистрироваться</button>
-        </form>
-      </div>
-    </div>
-    </div>
-  </div> -->
+  
   {% block orders %} {% endblock %}
   {% block create %} {% endblock %}
   {% block created %} {% endblock %}
@@ -143,54 +98,12 @@
   <br><br>
 
   <div class="footer">
-    <div class="delivery-and-payment">
-      <a id="left-footer-content-delivery" href="#delivery">доставка и оплата</a>
-    </div>
-    <div class="exchange">
-      <a id="left-footer-content-exchange" href="#exchange">обмен и возврат</a>
-    </div>
-    <div class="contacts">
-      <a id="left-footer-content-contacts" href="#contacts">контакты</a>
-    </div>
-    <div class="follow-us">
-      <p id="centre-footer-content-follow-us">follow us</p>
-    </div>
-    <div class="insta-logo">
-      <a href="https://www.instagram.com/chernykh.julia/" id="instagram"><img src="{% static 'images/instalogo.png' %}"
-          id="centre-footer-content-instagram" width="20" height="20"></a>
-    </div>
-    <div class="news">
-      <p id="right-footer-content-news">узнавайте о новинках первыми</p>
-    </div>
-    <div class="e-mail-entering">
-      <input type="text" name="index" placeholder="e-mail">
-    </div>
-    <div class="button-field2">
-      <button class="button2">подписаться</button>
-    </div>
+    
   </div>
 
 
-  <!-- <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-2">
-      {% block sidebar %}
-	  <br></br>
-      <ul class="sidebar-nav">
-           <li><a href="{% url 'shop:main' %}">Домашняя страница</a></li> -->
-  <!-- <li><a href="{% url 'shop:product_list' %}">Все товары</a></li> -->
-  <!-- </ul>
-     {% endblock %}
-      </div>
-      <div class="col-sm-10 ">
-      {% block content %}{% endblock %}
-      </div>
-    </div>
-  </div> -->
-
+  
 </body>
-<!-- <script src="{% static 'function.js' %}"></script> -->
 
 </html>
 
-<!-- % url 'index' % -->

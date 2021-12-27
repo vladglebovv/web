@@ -1,9 +1,9 @@
 from django.db import models
 from django.urls import reverse
 
-class SubCategory(models.Model):
-    name = models.CharField(max_length=200, db_index=True)
-    slug = models.SlugField(max_length=200, db_index=True, unique=True)
+#class SubCategory(models.Model):
+    #name = models.CharField(max_length=200, db_index=True)
+    #slug = models.SlugField(max_length=200, db_index=True, unique=True)
 
 class Category(models.Model):
     name = models.CharField(max_length=200, db_index=True)
@@ -43,7 +43,7 @@ class Manufacturer(models.Model):
 
 class Product(models.Model):
     category_id = models.ForeignKey(Category, on_delete=models.CASCADE)
-    sub_category_id = models.ForeignKey(SubCategory, blank=True, null=True, on_delete=models.CASCADE)
+    #sub_category_id = models.ForeignKey(SubCategory, blank=True, null=True, on_delete=models.CASCADE)
     manufacturer_id = models.ForeignKey(Manufacturer, on_delete=models.CASCADE)
     name = models.CharField(max_length=200, db_index=True)
     slug = models.SlugField(max_length=200, db_index=True)

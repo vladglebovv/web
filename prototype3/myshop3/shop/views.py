@@ -31,12 +31,12 @@ def product_list(request, category_slug=None):
                    'categories': categories,
                    'products': products})
 
-def product_list_decor(request, category_slug=None):
+def product_list_bath(request, category_slug=None):
     category = None
     categories = Category.objects.all()
     products = Product.objects.filter(available=True)
     
-    category = get_object_or_404(Category, slug='decor')
+    category = get_object_or_404(Category, slug='bath')
     products = products.filter(category_id=category)
     return render(request,
                   'shop/product/list.html',
@@ -44,25 +44,14 @@ def product_list_decor(request, category_slug=None):
                    'categories': categories,
                    'products': products})
 
-def product_list_decor_vase(request, category_slug=None):
-    sub_category = None
-    sub_categories = SubCategory.objects.all()
-    products = Product.objects.filter(available=True)
-    
-    sub_category = get_object_or_404(SubCategory, slug='vase')
-    products = products.filter(sub_category_id=sub_category)
-    return render(request,
-                  'shop/product/list.html',
-                  {'sub_category': category,
-                   'sub_categories': categories,
-                   'products': products})
 
-def product_list_chancellery(request, category_slug=None):
+
+def product_list_sink(request, category_slug=None):
     category = None
     categories = Category.objects.all()
     products = Product.objects.filter(available=True)
     
-    category = get_object_or_404(Category, slug='chancellery')
+    category = get_object_or_404(Category, slug='sink')
     products = products.filter(category_id=category)
     return render(request,
                   'shop/product/list.html',
@@ -70,12 +59,12 @@ def product_list_chancellery(request, category_slug=None):
                    'categories': categories,
                    'products': products})
 
-def product_list_tableware(request, category_slug=None):
+def product_list_tap(request, category_slug=None):
     category = None
     categories = Category.objects.all()
     products = Product.objects.filter(available=True)
     
-    category = get_object_or_404(Category, slug='tableware')
+    category = get_object_or_404(Category, slug='tap')
     products = products.filter(category_id=category)
     return render(request,
                   'shop/product/list.html',
